@@ -1,7 +1,8 @@
 # NodeNet
 NodeNet is a web-app that is written with only standard web development. 
 
-It is made this way so that it is simple, easy to understand, compatable with chromebooks, and can be tailored by the user.
+It is made this way so that it is simple, easy to understand, compatable with chromebooks, and can be tailored by the user.  
+
 ![A smiley face](./smile.png)
 
 NodeNet allows users to access small but enjoyable things like easy screen recording, simplistic HTML5 games, and others. This repo contains the full copy, with the future exception of a couple private or custom nodes.
