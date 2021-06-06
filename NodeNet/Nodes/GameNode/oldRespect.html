@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<style> 
+
+</style>
+
+<body> 
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Bi </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Straight </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Pan </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Aro/Ace </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Fluid </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Trans </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Nonbinary </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Cis </button>
+	<button style="border: 1px solid lightblue; background-color: yellow; color: blue; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addRespect()'>Add respect for Homo </button>
+	
+	<button style="border: 1px solid lightblue; background-color: blue; color: white; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addMouth()'>Sacrifice 50 respects for +1 mouth </button>
+	<button style="border: 1px solid lightblue; background-color: blue; color: white; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addMouth2()'>Sacrifice 1000 respects for +10 mouths </button>
+	<button style="border: 1px solid lightblue; background-color: blue; color: white; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addMouth3()'>Sacrifice 100000 respects for +1000 mouths </button>
+	<button style="border: 1px solid lightblue; background-color: blue; color: white; width: 250px; height: 180px; font-size: 20px;margin: auto;" onClick='addMouth4()'>Sacrifice 10000000 respects for +100000 mouths </button>
+	<p id='respectCounter'> </p>
+	<p id='respectLevelCounter'> </p>
+	<p id='disrespectCounter'> </p>
+	<br>
+	<p>Warning(s): (If you get any)</p>
+	<p id='flexSpace'></p>
+</body>
+
+</html>
+
+
+
+<script>
+	var respects = 0;
+	var respectLevel = 1;
+	var disrespects = 8000000000;
+
+	function showAll() {
+		document.getElementById('respectCounter').innerHTML = respects + " Total Respects Sent";
+		document.getElementById('respectLevelCounter').innerHTML = respectLevel + " Total Mouths";
+		document.getElementById('disrespectCounter').innerHTML = disrespects + " People Left to Respect";
+	}
+	showAll();
+	
+	function addRespect() {
+		respects += respectLevel;
+		disrespects -= respectLevel;
+		showAll();
+	}
+	//function addBigRespect() {
+	//	respects += 100000000;
+	//	disrespects -= 100000000;
+	//	showAll();
+	//}
+	function addMouth() {
+		if (respects < 50) {
+			document.getElementById('flexSpace').innerHTML = "Sorry, you don't have enough respects. Try going out to the park and handing out compliments?";
+		}
+		else if (respectLevel > 9) {
+			document.getElementById('flexSpace').innerHTML = "You already have a lot of mouths. Try the next button?";
+		}
+		else {
+			respects -= 50;
+			disrespects += 50;
+			respectLevel += 1;
+			showAll();
+		}
+	}
+	
+	function addMouth2() {
+		if (respects < 1000) {
+			document.getElementById('flexSpace').innerHTML = "Sorry, you don't have enough respects. Try posting a positive quote on social media?";
+		}
+		else {
+			respects -= 1000;
+			disrespects += 1000;
+			respectLevel += 10;
+			showAll();
+		}
+	}
+
+	function addMouth3() {
+		if (respects < 100000) {
+			document.getElementById('flexSpace').innerHTML = "Sorry, you don't have enough respects. Try giving a friend a hug?";
+		}
+		else {
+			respects -= 100000;
+			disrespects += 100000;
+			respectLevel += 1000;
+			showAll();
+		}
+	}
+	function addMouth4() {
+		if (respects < 10000000) {
+			document.getElementById('flexSpace').innerHTML = "Sorry, you don't have enough respects. Try giving a bug a hug?";
+		}
+		else {
+			respects -= 10000000;
+			disrespects += 10000000;
+			respectLevel += 100000;
+			showAll();
+		}
+	}
+</script>

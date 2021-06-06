@@ -1,0 +1,128 @@
+<html>
+    <style>
+        .m-titleTop {
+            background-color:rgb(48, 66, 63 );
+            color: rgb(157, 220, 206);
+            text-align: center;
+            cursor: pointer;
+            font-size: 50px; 
+            height: 75px;
+            margin: auto;
+        }
+        .m-titleTopButton {
+            background-color:rgb(0, 6, 63 );
+            color: rgb(102, 118, 255);
+				font-family: Arial;
+            text-align: center;
+            font-size: 24px;
+				cursor: zoom-out;
+            height: 35px;
+            width: 160px;
+            margin: auto;
+				padding: 5px;
+        }
+		  .c-miscSpace {
+			flex: 35%;
+			padding:20px;
+			height:auto;
+		  }
+		  .c-gameDisplay {
+		  background-color: white;
+			flex: 35%;
+			padding: 20px;
+			border-style: solid;
+			border-color: black;
+			border-width: 4px;
+			height: auto;
+			display: flex;
+		  }
+		  .c-gameButton {
+		  	background-color: rgb(161, 168, 224);
+			padding: 10px;
+			border-style: solid;
+			border-color: black;
+			border-width: 5px;
+			color: rgb(0, 19, 183);
+			flex: 50%;
+			margin: 5;
+		  }
+		  
+    </style>
+    <body style="background-color: grey">
+
+		 <script>
+			function homeClick() {
+				window.open("./thingy.html", "_self");
+			}
+		 </script>
+
+			  <div class="m-titleTop">
+					<img src="./RandomNode Source/thingyLogo.png" class="m-titleTop" onclick="homeClick()">
+					<div style="display:flex">
+					<p style="flex: 50%" class="m-titleTopButton" id="topButtonA">Visit joke</p>
+					<p style="flex: 50%" class="m-titleTopButton" id="topButtonB">Game and Melons</p>
+					<p style="flex: 50%" class="m-titleTopButton" id="topButtonC">Homuse</p>
+					</div>
+			  </div>
+				<br>
+				<br> 
+				<br>
+				<div class="c-gameDisplay">
+				<p> <br><br><br><br><br><br> </p>
+				<button class="c-gameButton" id="button1">Click for click</button>
+				<button class="c-gameButton" id="button2">Buy some melons. Click here to see them.</button>
+				</div>
+				<br>
+				<br>
+				<p id="pointSpace"> </p>
+				<p id="updateSpace"> </p>
+				<script>
+				
+				const button1 = document.getElementById("button1");
+				const button2 = document.getElementById("button2");
+				
+				var points = 0;
+				var pointData = 0;
+				var updateData = " ";
+				
+				function updates() {				
+				
+					if (points == 69) {
+						updateData = "Note: Nice";
+					}
+					else if (points == 420) {
+						updateData = "Note: Blaze it";
+					}
+					else {
+						updateData = "-";
+					}
+					
+					document.getElementById("updateSpace").innerHTML = updateData;
+					document.getElementById("pointSpace").innerHTML = points + " Total Clicks.";
+					
+				}
+				
+				updates();
+				
+				button1.addEventListener("click", () => {
+					points += 1;
+					updates();
+				});
+				
+				button2.addEventListener("click", () => {
+					window.open("./melon.html", "_self");
+				});
+				document.getElementById('topButtonA').addEventListener('click', () => {
+					alert("The joke is a placeholder; It will be replaced when possible.");
+					window.open("https://muncie.powerschool.com/public/", "_self");
+				});
+					document.getElementById('topButtonB').addEventListener('click', () => {
+					window.open("./thingy2.html", "_self");
+				});
+				document.getElementById('topButtonC').addEventListener('click', () => {
+					window.open("./Homuse.html", "_self");
+				});
+				
+				</script>
+		</body>
+</html>

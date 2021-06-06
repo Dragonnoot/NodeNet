@@ -1,0 +1,118 @@
+<html>
+    <style>
+        .m-titleTop {
+            background-color:rgb(48, 66, 63 );
+            color: rgb(157, 220, 206);
+            text-align: center;
+            
+            font-size: 50px; 
+            height: 60px;
+            margin: auto;
+        }
+        .m-titleTopButton {
+            background-color:rgb(0, 6, 63 );
+            color: rgb(102, 118, 255);
+				font-family: Arial;
+            text-align: center;
+            font-size: 24px;
+            height: 35px;
+            width: 160px;
+            margin: auto;
+				padding: 5px;
+        }
+		  .c-feedSpace {
+		  	background-color: white;
+			flex: 35%;
+			padding: 20px;
+			border-style: solid;
+			border-color: black;
+			border-width: 4px;
+			height: auto;
+		  }
+		  .c-miscSpace {
+			flex: 35%;
+			padding:20px;
+			height:auto;
+		  }
+		  
+    </style>
+    <body style="background-color: grey">
+	 
+	 <script>
+	 	function homeClick() {
+			window.open("./thingy.html", "_self");
+		}
+	 </script>
+	 
+        <div class="m-titleTop">
+            <p class="m-titleTop" onclick="homeClick()">Title of the site goes here.</p>
+				<div style="display:flex">
+				<p style="flex: 50%" class="m-titleTopButton" id="topButtonA">Visit joke</p>
+				<p style="flex: 50%" class="m-titleTopButton" id="topButtonB">Game and Melons</p>
+				<p style="flex: 50%" class="m-titleTopButton" id="topButtonC">Homuse</p>
+				<p style="flex: 50%" class="m-titleTopButton" id="topButtonD">PhyXTGears Timeclock Knockoff</p>
+				</div>
+        </div>
+			<br>
+			<br> 
+			<br>
+			
+		  <div id="pageMidSection" style="display: flex">
+		  <div id="feedSpace" class="c-feedSpace">
+		  
+		  		<p id="feedTarget"> </p>
+		  </div>
+		  <div id="miscSpace" class="c-miscSpace">
+		  		<p>cool</p>
+		  </div>
+		  </div>
+		  <form onSubmit="return False;">
+		  <input type="text">
+		  <input type="submit" onCLick="addPost()">
+		  </form>
+		  
+        <script>
+		  		//var feedList = import { feedPostList } from "./variables.html";
+		  		var feedList = ["<button>I do nothing</button><p style='color:blue;'>This button does <strong>nothing</strong>.</p>", "school is cancel", " ! Updates will be posted here from now on !<br>  -Dragonnoot"];
+				
+				for (post of feedList) {
+					post = post + "<hr>";
+					let postPart = document.createElement("div");
+					postPart.innerHTML = "<p>"+ post + "</p>";
+					postPart.id = 'posts';
+					document.getElementById('feedSpace').appendChild(postPart);
+					
+				}
+				
+            document.getElementById('topButtonA').addEventListener('click', () => {
+
+					window.open("https://muncie.powerschool.com/public/", "_self");
+
+				});
+				document.getElementById('topButtonB').addEventListener('click', () => {
+
+					window.open("./thingy2.html", "_self");
+
+				});
+				document.getElementById('topButtonC').addEventListener('click', () => {
+
+					window.open("./Homuse.html", "_self");
+
+				});
+				document.getElementById('topButtonD').addEventListener('click', () => {
+
+					window.open("./phyxtgear.html", "_self");
+
+				});
+				function addPost() {
+					var funky  = document.getElementById("postToAdd").value
+					feedList.prepend(funky);
+					for (post of feedList) {
+						postPart.innerHTML = "<p>"+ post + "</p>";
+						postPart.id = 'posts';
+						document.getElementById('feedSpace').appendChild(postPart);
+					}
+				}
+        </script>
+    </body>
+</html>

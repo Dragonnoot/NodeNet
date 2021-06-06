@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+	<style>
+		.c-topBar {
+			background: grey;
+			height: 50px;
+		}
+		.c-bottomBar {
+			background: grey;
+			height: 100px;
+		}
+		.c-creditText {
+			font-size: 10px;
+			color:grey;
+		}
+		.c-tauntText {
+			color:orange;
+			font-size: 19px;
+		}
+		.m-kazooImg {
+			height: 200px;
+			width: 221px;
+			font-family: Arial;
+		}
+		.m-titleTop {
+            background-color:rgb(48, 66, 63 );
+            color: rgb(157, 220, 206);
+            text-align: center;
+            cursor: pointer;
+            font-size: 50px; 
+            height: 75px;
+            margin: auto;
+        }
+        .m-titleTopButton {
+            background-color:rgb(0, 6, 63 );
+            color: rgb(102, 118, 255);
+				font-family: Arial;
+            text-align: center;
+            font-size: 24px;
+				cursor: zoom-out;
+            height: 32px;
+            width: 160px;
+            margin: auto;
+				padding: 5px;
+        }
+		  .c-miscSpace {
+			flex: 35%;
+			padding:20px;
+			height:auto;
+		  }
+		  .c-gameDisplay {
+		  background-color: white;
+			flex: 35%;
+			padding: 20px;
+			border-style: solid;
+			border-color: black;
+			border-width: 4px;
+			height: auto;
+			display: flex;
+		  }
+		  .c-gameButton {
+		  	background-color: rgb(161, 168, 224);
+			padding: 10px;
+			border-style: solid;
+			border-color: black;
+			border-width: 5px;
+			color: rgb(0, 19, 183);
+			flex: 50%;
+			margin: 5;
+		  }
+	</style>
+	<body>
+		
+		<script>
+			function homeClick() {
+				window.open("./thingyFolder/thingy.html", "_self");
+			}
+		 </script>
+
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo1" style="filter: invert(100%)">
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo2" style="filter: invert(80%)">
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo3" style="filter: invert(60%)">
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo4" style="filter: invert(40%)">
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo5" style="filter: invert(20%)">
+		<img class="m-kazooImg" src="./GameNode Source/kazoo.png" id="kazoo6">
+		<p class="c-creditText">Credits for above images to Adobe</p>
+		
+		<p class="c-tauntText"> One of us is good... But <em>who</em>?</p>
+		
+		<p style="font-size: 23px" id="kazooCount"> </p>
+		<p id="reveal"></p>
+		<div class="c-bottomBar">
+			<button id="game1">Kazoo Run</button>
+			<button id="game2">Pride Respect Clicker</button>
+			<button id="game3">Pride Respect Clicker *OLD*</button>
+		</div> 
+		<script>
+		
+			const kImg = "<img src='./GameNode Source/kazoo2.png'>";
+			let kCount = 0;
+			let activeKazoo;
+			let latestKey;
+			const rev = true;
+			
+			function getRandomInt(max) {
+				return Math.floor(Math.random() * max);
+			}
+			
+			function shuffle() {
+				activeKazoo = getRandomInt(6);
+				activeKazoo += 1;
+				if (rev == true) {
+					document.getElementById('reveal').innerHTML = "Active kazoo : " + activeKazoo;
+				}
+			}
+			function update() {
+				document.getElementById('kazooCount').innerHTML = "<img src='./GameNode Source/kazoo2.png' style='height: 50px; width: 50px'> : " + kCount; 
+			}
+			update();
+			shuffle();
+			document.getElementById('kazoo1').addEventListener('click', () => {
+				if (activeKazoo == 1) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			document.getElementById('kazoo2').addEventListener('click', () => {
+				if (activeKazoo == 2) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			document.getElementById('kazoo3').addEventListener('click', () => {
+				if (activeKazoo == 3) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			document.getElementById('kazoo4').addEventListener('click', () => {
+				if (activeKazoo == 4) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			document.getElementById('kazoo5').addEventListener('click', () => {
+				if (activeKazoo == 5) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			document.getElementById('kazoo6').addEventListener('click', () => {
+				if (activeKazoo == 6) {
+					kCount += 1;
+					shuffle();
+				}
+				update();
+			});
+			update();
+			document.addEventListener("keyup", function(event) {
+    			if (event.key === '1' && activeKazoo == 1) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				if (event.key === '2' && activeKazoo == 2) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				if (event.key === '3' && activeKazoo == 3) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				if (event.key === '4' && activeKazoo == 4) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				if (event.key === '5' && activeKazoo == 5) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				if (event.key === '6' && activeKazoo == 6) {
+      		   kCount += 1;
+					shuffle();
+    			}
+				update();
+			});
+
+			document.getElementById('game1').addEventListener('click', () => {
+				window.open("./KazooRunner.html", "_self");
+			});
+			document.getElementById('game2').addEventListener('click', () => {
+				window.open("./respect.html", "_self");
+			});
+			document.getElementById('game3').addEventListener('click', () => {
+				window.open("./oldRespect.html", "_self");
+			});
+		</script>
+
+	</body>
+</html>

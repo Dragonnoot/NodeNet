@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <style>
+        .textStyle1 {
+            
+            background-color: black;
+            color: red;
+            font-family: Comic Sans MS;
+        }
+        .textInputStyle {
+            background-color: black;
+            color: tomato;
+            border-color: white;
+            border-radius: 7px;
+            font-family: Comic Sans MS;
+        }
+        .buttonStyle {
+            background-color:686868;
+            border-radius: 7px;
+            border-color: white;
+        }
+    </style>
+
+    <body style="background-color:black">
+        <h2 class="textStyle1">Phyxtgears Team 1720</h2>
+        <p class="textStyle1" id="namePlace"></p>
+        
+        <form onsubmit="return false;">
+            <input type="text" id="newUser" class="textInputStyle" placeholder="New user">
+            <input type="submit" onclick="beanos()">
+        </form>
+        
+        <form>
+            <input type="text" id="hourEdit" class="textInputStyle" placeholder="Hour editing password">
+            <input type="submit" class="buttonStyle" onclick="checkHourCode()">
+        </form>
+        
+        <p id="freeSpace"></p>
+        
+        <script>
+    var stolenName = "";
+    var nameList = ["Emmie Jones"];
+    var passAttempt = "";
+    
+    //Add names
+    document.getElementById("namePlace").innerHTML = nameList;
+    function beanos() {
+        
+        stolenName = "<br>" + document.getElementById("newUser").value;
+        nameList.push(stolenName);
+        document.getElementById("namePlace").innerHTML = nameList;
+        
+    }
+    //Check the inserted password
+    function checkHourCode() {
+        passAttempt = document.getElementById("hourEdit");
+        
+    }
+    </script>
+    </body>
+    
+</html>

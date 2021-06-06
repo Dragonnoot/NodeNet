@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<style> 
+
+</style>
+
+<body style="display: flex;"> 
+	
+	<script>
+	
+	//  DO - - - DO - - - DO - - - DO - - - DO - - -
+		
+		// -Add button texts
+		// -finish scaling costs.
+	
+	</script>
+	
+<div style="flex: 70%">
+	<button style="border: 1px solid lightblue; background-color: black; color: red; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Bi </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: orange; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Straight </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: yellow; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Pan </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: lightgreen; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Aro/Ace </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: lightblue; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Fluid </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: blue; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Trans </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: rgb(134, 0, 175); width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Nonbinary </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: rgb(255, 122, 144); width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Cis </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: white; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Homo </button>
+	<button style="border: 1px solid lightblue; background-color: black; color: grey; width: auto; height: 100px; font-size: 20px; flex: 33%" onClick='addRespect()'>Add respect for Androgynous </button>
+	<button id="b1" style="border: 1px solid lightblue; background-color: blue; color: white; width: auto; height: 80px; font-size: 20px" onClick='addMouth()' ></button>
+	<button id="b2" style="border: 1px solid lightblue; background-color: blue; color: white; width: auto; height: 80px; font-size: 20px" onClick='addMouth2()'> </button>
+	<button id="b3" style="border: 1px solid lightblue; background-color: blue; color: white; width: auto; height: 80px; font-size: 20px" onClick='addMouth3()'>Sacrifice 100000 respects for +1000 mouths </button>
+	<button id="b4" style="border: 1px solid lightblue; background-color: blue; color: white; width: auto; height: 80px; font-size: 20px" onClick='addMouth4()'>Sacrifice 10000000 respects for +100000 mouths </button>
+	<button id="b5" style="border: 1px solid lightblue; background-color: blue; color: white; width: auto; height: 80px; font-size: 20px" onClick='addMouth5()'>Sacrifice 10000000000 respects for +10000000 mouths </button>
+	</div>
+	<br>
+	<div style="flex: 30%; padding: 10px;">
+	<p id='respectCounter' style="font-family:Arial; font-size: 20px;"> </p>
+	<p id='respectLevelCounter'> </p>
+	</div>
+	<p id='disrespectCounter'> </p>
+	<br>
+	<p>Warning(s): (If you get any)</p>
+	<p id='flexSpace' style="width:50px"></p>
+</body>
+
+</html>
+
+
+
+<script>
+	var respects = 0;
+	var respectLevel = 1;
+	var disrespects = 8000000000;
+
+	var mC1 = 50;
+	var mC2 = 1000;
+	var mC3 = 100000;
+	var mC4 = 10000000;
+	var mC5 = 10000000000;
+	
+	function showAll() {
+		document.getElementById('respectCounter').innerHTML = respects + " Total Respects Sent";
+		document.getElementById('respectLevelCounter').innerHTML = respectLevel + " Total Mouths";
+		document.getElementById('disrespectCounter').innerHTML = disrespects + " People Left to Respect";
+		
+		document.getElementById('b1').innerHTML = "Sacrifice " + mC1 + " respects for +1 mouth ";
+		document.getElementById('b2').innerHTML = "Sacrifice " + mC2 + " respects for +10 mouth ";
+		document.getElementById('b3').innerHTML = "Sacrifice " + mC3 + " respects for +1000 mouths ";
+		document.getElementById('b4').innerHTML = "Sacrifice " + mC4 + " respects for +100000 mouths ";
+		document.getElementById('b5').innerHTML = "Sacrifice " + mC5 + " respects for +10000000 mouths ";
+	}
+	showAll();
+	
+	function addRespect() {
+		respects += respectLevel;
+		disrespects -= respectLevel;
+		document.getElementById('flexSpace').innerHTML = "<br>__";
+		showAll();
+	}
+	function addMouth() {
+		if (respects < mC1) {
+			document.getElementById('flexSpace').innerHTML = "<br>Sorry, you don't have enough respects. Try going out to the park and handing out compliments?";
+		}
+		else {
+			respects -= mC1;
+			disrespects += mC1;
+			respectLevel += 1;
+			mC1 += 10;
+			showAll();
+		}
+	}
+	
+	function addMouth2() {
+		if (respects < mC2) {
+			document.getElementById('flexSpace').innerHTML = "<br>Sorry, you don't have enough respects. Try posting a positive quote on social media?";
+		}
+		else {
+			respects -= mC2;
+			disrespects += mC2;
+			respectLevel += 10;
+			mC2 += 100;
+			showAll();
+		}
+	}
+
+	function addMouth3() {
+		if (respects < mC3) {
+			document.getElementById('flexSpace').innerHTML = "<br>Sorry, you don't have enough respects. Try giving a friend a hug?";
+		}
+		else {
+			respects -= mC3;
+			disrespects += mC3;
+			respectLevel += 1000;
+			mC3 += 10000;
+			showAll();
+		}
+	}
+	function addMouth4() {
+		if (respects < mC4) {
+			document.getElementById('flexSpace').innerHTML = "<br>Sorry, you don't have enough respects. Try giving a bug a hug?";
+		}
+		else {
+			respects -= mC4;
+			disrespects += mC4;
+			respectLevel += 100000;
+			mC4 += 1000000;
+			showAll();
+		}
+	}
+	function addMouth5() {
+		if (respects < mC5) {
+			document.getElementById('flexSpace').innerHTML = "<br>Sorry, you don't have enough respects. Try giving a bug a hug?";
+		}
+		else {
+			respects -= mC5;
+			disrespects += mC5;
+			respectLevel += 10000000;
+			mC5 += 100000000;
+			showAll();
+		}
+	}
+</script>

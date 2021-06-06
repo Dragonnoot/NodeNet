@@ -1,0 +1,252 @@
+<html>
+    <style>
+        .inpstyle {
+            color: blue;
+            width: 500px;
+        }
+		  .generalStyle {
+		  	min-width: 1000px;
+			margin: auto;
+		  }
+		  .c-sheetStyle {
+		  	width: 500px;
+			background-color: grey;
+			height: 500px;
+		  }
+		  .c-imageSee {
+		  	background-color: lightBlue;
+			color: tomato;
+			font-family: Arial;
+		  }
+		  .c-trashSee {
+		  	background-color: lightGreen;
+			color: yellow;
+			font-family: Arial;
+		  }
+    </style>
+    <body>
+        <form onsubmit="return false;">
+            <input type="text" id="inin" class="inpstyle" placeholder="Address">
+            <input type="submit" onclick="takeadr();">
+        </form> <button onclick="homePage()">Home</button>
+		 <button id="backSite">Back to Thingy</button>
+		 <script>
+		 document.getElementById('backSite').addEventListener('click', function() {
+		 	window.open("./thingy.html", "_self");
+		 });
+		 </script>
+<br>
+<br>
+        <p id="page_place"></p>
+        <script>
+            var subActive = false;
+				var userFileNames = ['Awesome file' , '.'];
+				var userFileContents = ['This is a text document.', "cool"];
+				
+				function set(s) {
+					to_display = s;
+               document.getElementById("page_place").innerHTML = to_display;
+				}
+				
+				function newFile(name, info) {
+					userFileNames.push(name);
+					userFileContents.push(info);
+				}
+				
+				function newFileUI() {
+					set("<form onSubmit='return false'><input type='text' id='newFileEntry'><input type='submit'></form>");
+				}
+				
+				function homePage() {
+				set("<p class='generalStyle' style='color:blue'>            █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█<br>█┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼╔╗╔╗╔╗┼┼╔╗┼┼┼┼┼┼┼┼┼┼┼┼╔╗┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼║║║║║║┼┼║║┼┼┼┼┼┼┼┼┼┼┼┼║║┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼║║║║║╠══╣║╔══╦══╦╗╔╦══╣║┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼║╚╝╚╝║║═╣║║╔═╣╔╗║╚╝║║═╬╝┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼╚╗╔╗╔╣║═╣╚╣╚═╣╚╝║║║║║═╬╗┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼┼╚╝╚╝╚══╩═╩══╩══╩╩╩╩══╩╝┼┼┼┼┼┼┼┼┼┼┼┼█<br>█┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼█<br>█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█<br><br>        </p>        <h3>Welcome, to <strong>Homuse 0.5.2!</strong></h3>        <p>To see some available addresses, visit h/see!</p>");
+				}
+            homePage();
+			  
+			  function editReadFile(nameF, valueF) {
+				  set("<form onSubmit='return false'><input type='text' id='editField' style='height: 150px'><input type='submit'></form>");
+				  document.getElementById('editField').innerHTML = valueF;
+			  }
+				
+			  function takeReadFile() {
+				  var fileToRead = document.getElementById('fileFeeder').value;
+				  var fileLocation = userFileNames.indexOf(fileToRead);
+				  var displayedFile = userFileContents[fileLocation];
+				  
+				  function triggerEdit() {
+					  editReadFile(fileToRead, displayedFile);
+				  }
+				  
+				  set(displayedFile, "<br><button id='editButton' onClick='triggerEdit()'>Edit</button>");
+				}
+				
+            function takeadr()
+            {
+                var taken_adr = document.getElementById("inin").value;
+                var to_display = "Checking address..."
+                
+                document.getElementById("page_place").innerHTML = to_display;
+                switch (taken_adr){
+                    case "h/see":
+                        to_display = "________________You are on address h/see!________________<br><br>There are plenty of sites to discover, but unfortunately these are the<br>only ones currently available. <strong>**</strong>Make sure to <em>scroll down</em>!<br><br><br>   <strong>h/button </strong>- A simple, quick button game where you click a button to generate clicks to buy upgrades with. More content on it's way!<br><br><strong>h/library </strong>- This page is actually a page web(Woohoo!!), but it unfortunately only has one piece, in the formal section.<br><br><strong>h/hidden </strong>- Info on hidden pages<br><br><strong>h/opt </strong>- The Option(s) for Homuse!<div class='c-imageSee'><h3>Images:</h3><strong>h/img.tou </strong>- This one is an image of a toucan.<br><br><strong>h/img.desert </strong>- Here's a picture of a desert.<br><br><strong>h/img.hom </strong>- This page is a Homuse banner.<br><br><strong>h/img.night </strong>- This one is a picture of a little house at night with a big tree!.<br><br><strong>h/img.kiwi </strong>- This one is an image of a kiwi bird.</div> <div class='c-trashSee'> <h3>Trash pages:</h3><strong>h/lines</strong> - Just a bunch of lines.</div>";
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    
+                    case "h/opt":
+                        to_display = "<img width='25' height='25' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzdU0tgdbvhs0ic1V84Fp5XhjtnIQIo-LisLYtrydEFgCFSHBS:https://cdn.imgbin.com/15/21/15/imgbin-computer-icons-symbol-hazard-risk-symbol-QYeWArFqgfujfP9EE72x3Fi1s.jpg&usqp=CAU' ></img>   <button onclick='onSub()'>Turn on Subbase</button><button onclick='offSub()'>Turn off Subbase</button>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    
+                          case "h/updates":
+                         to_display = "<iframe class='c-sheetStyle' src='https://docs.google.com/spreadsheets/d/e/2PACX-1vRumj6Ygi5N-iS4OKO0G63Ma3Of9Kc7A6qGhCvr_zMm7SbnRsWlYlZyRO8FHQ4Nachtl3jX2mGuyQpk/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false'></iframe>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/hidden":
+                        to_display = "Homuse itself has the ability to hold hidden pages- protected by<br>unlisted names and requiring  Subbase  to  be  either  active  or<br>inactive. These hidden pages are barely regulated, and can talk<br>about virtually anything, so long as they do not go too far.<br>  One such page is actually a small page web of hidden inform-<br>-ation on various interesting subjects. The web  itself is  named<br>B0129, or B01 for short. The  address,  of  course,  will  not  be<br>disclosed at  this  time.  It is  only  available  in  direct  Homuse<br>Modules installed by the dev, and  downloadable  editions as  it<br>would otherwise be possible to find  hidden  pages.   The    only<br>other way to  find  these  pages  is  to  ‘Brute force it’,  which  is <br>essentially just  repeatedly  guessing  random  codes of  letters<br>and numbers in the address bar until you find something.<br>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    
+                    case "b01/main":
+                        if (subActive == false) return;
+                        to_display = "<h3 style='font-family:arial'>b01</h3><p style='font-family:arial'>All your dark web needs</p><hr><p style='font-family:arial'><strong>Banned topics:</strong></p><p>-Purposefully harming another individual,</p><p>-Finding, aquiring or making illegal or dangerous substances,</p><p>-Encouraging harm of self or others</p><p>-intentionally malicous hacking</p><p>-Inciting hate or dehumanization towards a group or individual (Which different from calling an unjust one out)</p>";
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+							
+							//    FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES  -  FILES 
+							
+							case "files":
+							
+								set("<h2 style='font-family:Arial'>Your Files</h2><p>" + userFileNames + "</p><form onSubmit='takeReadFile();'><input type='text' id='fileFeeder' placeholder='Read a file'><input type='submit' onclick='takeReadFile()'></form>");
+							break;
+                    
+						  
+						  
+                    //        Technicals above, others below       Technicals above, others below       Technicals above, others below       Technicals above, others below       Technicals above, others below       Technicals above, others below
+                    
+                    
+                    case "h/img.tou":
+                        to_display = "░░░░░░░░▄▄▄▀▀▀▄▄███▄░░░░░░░░░░░░░░░░░░<br>░░░░░▄▀▀░░░░░░░▐░▀██▌░░░░░░░░░░░░░░░░░<br>░░░▄▀░░░░▄▄███░▌▀▀░▀█░░░░░░░░░░░░░░░░░<br>░░▄█░░▄▀▀▒▒▒▒▒▄▐░░░░█▌░░░░░░░░░░░░░░░░<br>░▐█▀▄▀▄▄▄▄▀▀▀▀▌░░░░░▐█▄░░░░░░░░░░░░░░░<br>░▌▄▄▀▀░░░░░░░░▌░░░░▄███████▄░░░░░░░░░░<br>░░░░░░░░░░░░░▐░░░░▐███████████▄░░░░░░░<br>░░░░░░░░░░░░░░▐░░░░▐█████████████▄░░░░<br>░░░░░░░░░░░░░░░▀▄░░░▐██████████████▄░░<br>░░░░░░░░░░░░░░░░░░▀▄▄████████████████▄<br>░░░░░░░░░░░░░░░░░░░░░█▀██████░░░░░░░░░"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/img.desert":
+                        to_display = "░░░░░░░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░<br>░░░░░░░░░░░░░░░░░░░░░░█░█▄█░░░░░░░░░░░░░<br>░░░░░░░░░░░░░░░░░░░░░░▀▀█░░░░░░░░░░░░░░░<br>░░░░░░░░░░░░░░░░░░░░░░░░█░░░░░░░▄▄▀▀▀▀▀▀<br>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▀▀▀▀▀▀▀▀▀▀▀▀░░░░░░<br>▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/img.hom":
+                        to_display = "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br>░░█░░█░░░░░░░░░░░░░░░░░░░░░░░░░░<br>░░█▄▄█░░▄▄░░░░░░░░░░░█▀▀░░░▄▄░░░<br>░░█▀▀█░▐░░▌░▄░▄░▐░░▌░█▄░░░██▄█░░<br>░░█░░█░▐░░▌▐░▀░▌▐░░▌░░░█░░█░░░░░<br>░░▀░░▀░░▀▀░▐░░░▌░▀▀░░▄▄█░░░▀▀▀░░<br>░░▀▀▀█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/img.night" :
+                        to_display = "░██░░░█░░░█░░░░░░░░░░█░░░░░░░░░░░░░<br>░█░░░░░█░█░░░░░██░░░░░█░░░░░░░░░░░░<br>█████░░░█░░░░░█░░█░░░░░█░░░░░░░░░░░<br>░█░██░░█░░░░░█░░░░█░░░█░░░░░░░░░░░░<br>░█░░░░░█░░░░░██░░░░░░█░░░░░░░░░░░░░<br>█░█░█░█░░░░░░░██░░░░█░░░░░░░░░░░░░░<br>░██░█░███░░░░░░░████░░░░░░░░░░░░░░░<br>░░██░█░░░█░░░░░░░░░▄▄▄▄▄▄▄░░░░░░░░░<br>░░░█░█░███░░░░░░░▄█████████▄░░░░░░░<br>░░░███░░░░░░░░░░░░█┼█████┼█░░░░░░░░<br>░░░░██░░░░░░░░░░░░████▒████░░░░░░░░<br>▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒<br>▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒<br>▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/img.kiwi" :
+                        to_display = "──────────────────────────────────────────<br>──────────────────────────────────────────<br>──────────────────────────────────────────<br>────────▄▄▄▄▄▄▄▄▄▄▄──────▄▄▄▄▄▄▄──────────<br>──────█▀░░░░░░░░░░░▀▀█▄█▀░░░░░░▐──────────<br>─────█░░░░░░░░░░░░░░░░░░░░░█░░░▄█▄▄▄▄▄▄▄──<br>─────▌▒░░░░░░░░░░░░░░░░░░░░░░░▒▒▌─────────<br>────█▒▒▒▒░▒░░░░░░░▒▒▒░▒▒▒▒▒▒█▀▀▀──────────<br>────▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄█──────────────<br>─────▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒███────────────────<br>───────█▄▒▒▒▒▒▒▒▒▒▄████▀──────────────────<br>────────█▀▀▀▀▀▀█▀▀▀───────────────────────<br>───────█▀───────█─────────────────────────<br>───────█────────▐─────────────────────────<br>───────█─────────█────────────────────────<br>───────████▀█─────██▀▀────────────────────<br>───────▀█──█──────▐─▀█────────────────────<br>──────────────────────────────────────────"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    
+                    case "h/button" :
+                        to_display = " This is a very primitive version of Crab Collector! <button onclick='buttonClick()'>I give crab.</button><p id='numberHere'></p><button onclick='buyUp()'>More Colors On Shells and add a leg(Costs 50 crabs) **Can get this upgrade 7 times!</button>      <button onclick='buyUp2()'>+10 legs (Costs <strong>500</strong> crabs!) **Can get up to 5 of these!</button>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/img.tag" :
+                        to_display = "______██████_____________________________________________<br>███████████████████████████████████████████<br>██▀░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▀█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█<br>██▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄█<br>███████████████████████████████████████████"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+    
+                    //Library ===================================================================================================================
+                    case "h/library" :
+                        to_display = "Welcome to the library! Here, you can find stories and snippets as you please!<h3>Fantasy is at h/library/fantasy,</h3><h3>Essays and nonfiction are at h/library/formal,</h3><h3>Commentary can be found at h/library/comment</h3>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/library/fantasy" :
+                        to_display = "<h2><strong>Fantasy</strong></h2> Sorry! there currently isn't any stories. Email emmalene.jones@muncieschools.net or affordablehaulingandtransport@gmail.com with a story if you'd like to have it added!"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/library/formal" :
+                        to_display = "<h2><strong>Formal writings</strong></h2> Sorry! there currently isn't any stories. Email emmalene.jones@muncieschools.net or affordablehaulingandtransport@gmail.com with a story if you'd like to have it added!"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/library/comment" :
+                        
+                        to_display = "<h2><strong>Commentary</strong></h2><h3>The Walk Home</h3><p style='font-size:9'><em>h/library/comment/1</em></p>";
+                        document.getElementById("page_place").innerHTML = to_display;
+                        break;
+                        case "h/library/comment/1":
+                        to_display = "<p align='justify'> My footsteps remained quite uneven, in the winter snow. Though it was melting at that point there was still a layer of ice beneath a thick layer of snow that would catch anyone not paying attention to their footwork. Perhaps, if I was lucky, I could make it home without a single slip. Actually, I did. It really wasnt tough to make my way on the straight shot and I was unsure of just what to think about. There was, and always has been, far too many things to think about them all. This was another thing to ponder. Could it spiral my mind out of control, laying awake for hours when i'm meant to sleep? Could it send me flying on a fine Autumn wind, only to trip over a branch and send myself falling, barreling, into the depths of distress and hurt? <br>Of course.</p><p>-Dragonnoot</p>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                        break;
+
+                        //Library ===================================================================================================================
+                        case "h/lab" :
+                        to_display = "<h1 style='font-family:arial'>Welcome to Interbio Labs Public Interface!</h1><h6><em>(Also known, respectively- as ILPI.)</em></h6><p>   Here in ILPI you an find a variety of scientific resources<br>on genetics, microbiology, and more! <br>You can find</p>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    case "h/lines" :
+                        to_display = "<hr><br><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>"
+                        document.getElementById("page_place").innerHTML = to_display;
+                     break;
+                    // case "h/SEE" :
+                    //     to_display = ""
+                    //     document.getElementById("page_place").innerHTML = to_display;
+                    //  break;
+                    default:
+                        to_display = "Sorry, you'll have to try again!"
+                        document.getElementById("page_place").innerHTML = to_display;
+                    break;
+
+                }
+                
+            }
+            
+            //                     h/opt                     h/opt                     h/opt
+            function onSub() {
+                subActive = true;
+            }
+            function offSub() {
+                subActive = false;
+            }
+            
+            //                     h/button stuff                    h/button stuff                    h/button stuff
+            var buttonCount = 0;
+            var addCount = 1;
+            var boughtUps = 0;
+            var boughtUp2 = 0;
+            
+            
+            function buttonClick() {
+                buttonCount += addCount;
+                document.getElementById("numberHere").innerHTML = buttonCount + " crabs";
+            }
+            function buyUp() {
+                if (boughtUps < 7) {
+                    if (buttonCount >= 50) {
+                        buttonCount -= 50;
+                        addCount += 1;
+                        boughtUps += 1;
+                        document.getElementById("numberHere").innerHTML = buttonCount + " crabs";
+                    }
+                }
+                
+                return buttonCount,addCount, boughtUps;
+            }
+        function buyUp2() {
+            if (boughtUp2 < 4) {
+                if (buttonCount >= 500) {
+                    
+                    buttonCount -= 500;
+                    addCount += 10;
+                    boughtUp2 += 1;
+                    document.getElementById("numberHere").innerHTML = buttonCount + " crabs";
+                    
+                }
+            }
+            return buttonCount,addCount, boughtUp2;
+        }
+        
+        function takecolor() {
+            
+        }
+        
+        </script>
+    </body>
+</html>
