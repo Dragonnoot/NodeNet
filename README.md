@@ -23,5 +23,5 @@ Node list:
  - RecordNode : A very small but useful node. It has one file, which allows you to record your screen and microphone input for unlimited time (Or at least as long as your computer can manage) and download it. The script was written while following a tutorial. I wrote it because I was frustrated with how hard it is to find good recording software without needing an account/paying for time/having limits/etc.  \[Mostly Functional]
 
 - VersatileNode : Three .html files all linked together, which is actually the coming website for Versatile Services, a super versatile, child owned company! (Three children, to be exact, and I'm one of them) \[Beta Phase]
-
+ 
 ##             NodeNet is in early alpha. All of this is subject to change.
