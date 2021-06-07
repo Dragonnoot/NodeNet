@@ -29,7 +29,7 @@ video {
   </head>
 
   <body>
-    <p>CODE FOLLOWED FROM https://dev.to/sebastianstamm/screen-recording-in-10-lines-of-vanilla-js-3bo8   - And modified by Dragonnoot ► That was allowed.</p>
+    <p>CODE TUTORIAL FOLLOWED FROM https://dev.to/sebastianstamm/screen-recording-in-10-lines-of-vanilla-js-3bo8   - And modified by Dragonnoot ► That was allowed.</p>
     <p>To download after recording, right click the playing video and hit "Download" or "Save as". Enjoy!</p>
     <button id="start">
       Start Recording
@@ -39,44 +39,46 @@ video {
     </button>
     <video autoplay />
 
-    <script>const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const video = document.querySelector("video");
-let recorder, stream;
+    <script>
+      const start = document.getElementById("start");
+      const stopButton = document.getElementById("stop");
+      const video = document.querySelector("video");
 
-async function startRecording() {
+      let recorder, stream;
 
-const stream = await navigator.mediaDevices.getUserMedia({
-  audio: true,
-   video: { mediaSource: "screen" }
-});
+      async function startRecording() {
+        
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: { mediaSource: "screen" }
+      });
 
-  recorder = new MediaRecorder(stream);
+        recorder = new MediaRecorder(stream);
 
-  const chunks = [];
-  recorder.ondataavailable = e => chunks.push(e.data);
-  recorder.onstop = e => {
-    const completeBlob = new Blob(chunks, { type: chunks[0].type });
-    video.src = URL.createObjectURL(completeBlob);
-  };
+        const chunks = [];
+        recorder.ondataavailable = e => chunks.push(e.data);
+        recorder.onstop = e => {
+          const completeBlob = new Blob(chunks, { type: chunks[0].type });
+          video.src = URL.createObjectURL(completeBlob);
+        };
 
-  recorder.start();
-}
+        recorder.start();
+      }
 
-start.addEventListener("click", () => {
-  start.setAttribute("disabled", true);
-  stop.removeAttribute("disabled");
+      start.addEventListener("click", () => {
+        start.setAttribute("disabled", true);
+        stop.removeAttribute("disabled");
 
-  startRecording();
-});
+        startRecording();
+      });
 
-stop.addEventListener("click", () => {
-  stop.setAttribute("disabled", true);
-  start.removeAttribute("disabled");
+      stop.addEventListener("click", () => {
+        stopButton.setAttribute("disabled", true);
+        start.removeAttribute("disabled");
 
-  recorder.stop();
-  stream.getVideoTracks()[0].stop();
-});
-</script>
+        recorder.stop();
+        stream.getVideoTracks()[0].stop();
+      });
+    </script>
   </body>
 </html>
