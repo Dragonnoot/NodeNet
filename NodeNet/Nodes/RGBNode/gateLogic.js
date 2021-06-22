@@ -8,7 +8,7 @@ logField("[1]> Initializing...");
 
 //        ↓  ↓ ██ Will be Sourced from Server ██  ↓  ↓
 
-let fullData = {QOPAL: {userName: "GeoDrake", signed: true}, POOPOO: {userName: "yeeHaw", signed: false}}
+let fullData = {QOPAL: {userName: "GeoDrake", signed: true, accountAge: 0}, POOPOO: {userName: "yeeHaw", signed: false, accountAge: 0}}; // <-- note that this data will be confined to the back end. STILL NEED LOGIN SYSTEM.
 
 //        ↓  ↓ ██            Local            ██  ↓  ↓
  
@@ -57,5 +57,15 @@ function isSigned() {
 }
 
 if (isSigned()) {
-  logField("<button>Connect</button>"); 
+  logField("<button id='connectButton'>Connect</button>"); 
 }
+
+const connectButton = document.getElementById('connectButton');
+
+connectButton.addEventListener('click', function() {
+  var userUserID = userData.userID;
+  var innerUserData = fullData[userUserID];
+
+  innerUserData.accountAge = 1; //Would send this data to server to be retrieved by main.html
+  window.open("./main.html", "_self");
+});
