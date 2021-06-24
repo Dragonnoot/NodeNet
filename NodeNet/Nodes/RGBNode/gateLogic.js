@@ -16,7 +16,7 @@ function doEverything() {
 
   //        ↓  ↓ ██ Will be Sourced from Server ██  ↓  ↓
 
-  let fullData = {QOPAL: {userName: "GeoDrake", signed: 0, accountAge: 0}, POOPOO: {userName: "yeeHaw", signed: false, accountAge: 0}}; // <-- note that this data will be confined to the back end. STILL NEED LOGIN SYSTEM.
+  let fullData = {QOPAL: {userName: "GeoDrake", signed: 1, accountAge: 0}, POOPOO: {userName: "yeeHaw", signed: false, accountAge: 0}}; // <-- note that this data will be confined to the back end. STILL NEED LOGIN SYSTEM.
 
   // ↑↑▬ NOT VISIBLE TO USER. IF THIS IS VISIBLE THEN SECURITY IS GONE. ▬↑↑
 
@@ -99,6 +99,4 @@ function doEverything() {
   codeHasRun += 1;
 }
 
-  innerUserData.accountAge = 1; //Would send this data to server to be retrieved by main.html
-  window.open("./main.html", "_self");
-});
+setTimeout(() => doEverything(), 1000);
