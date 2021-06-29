@@ -1,6 +1,6 @@
 //        ↓  ↓ ██ Will be Sourced from Server ██  ↓  ↓
 
-let fullData = {QOPAL: {userName: "GeoDrake", signed: true, accountAge: 0}, POOPOO: {userName: "yeeHaw", signed: false, accountAge: 0}};
+let fullData = {QOPAL: {userName: "GeoDrake", signed: true, accountAge: 1}, POOPOO: {userName: "yeeHaw", signed: false, accountAge: 0}};
 
 //        ↓  ↓ ██            Local            ██  ↓  ↓
  
@@ -13,4 +13,12 @@ function grabAge() {
 
     return userInnerData.accountAge;
 
+}
+
+if (!grabAge()) {
+    const killUserAccess = 1;
+    while (killUserAccess) {
+        document.getElementsByClassName("everything").innerHTML = "No.";  
+        alert("!!‼ You are not meant to be here ‼!!");
+    }
 }
